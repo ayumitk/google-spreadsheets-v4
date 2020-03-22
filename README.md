@@ -4,10 +4,10 @@
 
 Googleスプレッドシートを開きデータを入力する。こんな感じ。
 
-|Name|Description|Price|Available|
-|---|---|---|---|---|
-|Cofee Mug|Mug	Minim aute aliqua est laboris incididunt exercitation qui ut.|$9|Yes|
-|Coffee Grinder|Consectetur consectetur tempor exercitation in minim qui exercitation in.|$54|No|
+|Name          |Description                                                              |Price  |Available|
+|--------------|:-----------------------------------------------------------------------:|:-----:|:-------:|
+|Cofee Mug     |Mug	Minim aute aliqua est laboris incididunt exercitation qui ut.        |$9     |Yes      |
+|Coffee Grinder|Consectetur consectetur tempor exercitation in minim qui exercitation in.|$54    |No       |
 
 入力が終わったら、メニューの __Tools > Script editor__ をクリックして、GAS編集画面を開き、functionを2つ用意する。
 
