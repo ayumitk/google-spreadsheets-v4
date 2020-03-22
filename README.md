@@ -1,4 +1,4 @@
-# google-spreadsheets-v4
+# GoogleスプレッドシートをGASでデプロイし、JavaScriptで取得して表示する方法
 
 ## 1. GAS側
 
