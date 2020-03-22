@@ -37,7 +37,3 @@ __web app URL__ をコピーしておく。
 ## 2. Javascript側
 
 先ほどコピペしたURLを、JavaScriptでfetchします。
-
-詳しくはGoogleの公式ドキュメントを参照してね。
-
-[Method: spreadsheets.get](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/get?apix_params=%7B%22spreadsheetId%22%3A%221Xlw2faMX2GEPSmfe7gthLgTP07I_EMleq_TX0y30ZGE%22%7D)
