@@ -2,19 +2,47 @@
 
 ## 1. GAS側
 
-Googleスプレッドシートを開き、メニューの __Tools > Script editor__ をクリックして、GAS編集画面を開く。
+Googleスプレッドシートを開きデータを入力する。こんな感じ。
 
-functionを2つ用意する。
+|Name|Description|Price|Available|
+|---|---|---|---|---|
+|Cofee Mug|Mug	Minim aute aliqua est laboris incididunt exercitation qui ut.|$9|Yes|
+|Coffee Grinder|Consectetur consectetur tempor exercitation in minim qui exercitation in.|$54|No|
+
+入力が終わったら、メニューの __Tools > Script editor__ をクリックして、GAS編集画面を開き、functionを2つ用意する。
 
 ### function 1: `getData`
 
 スプレッドシートのデータを取得する。
+
+```
+function getData(sheetName) {
+  var sheet = SpreadsheetApp.getActive().getSheetByName(sheetName);
+  var rows = sheet.getDataRange().getValues();
+  var keys = rows.splice(0, 1)[0];
+  return rows.map(function(row) {
+    var obj = {};
+    row.map(function(item, index) {
+      obj[String(keys[index])] = String(item);
+    });
+    return obj;
+  });
+}
+```
 
 [Class SpreadsheetApp](https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app)
 
 ### function 2: `doGet`
 
 取得したデータを提供する。
+
+```
+function doGet() {
+  var data = getData('Sheet1');
+  return ContentService.createTextOutput(JSON.stringify(data, null, 2))
+  .setMimeType(ContentService.MimeType.JSON);
+}
+```
 
 [Class ContentService](https://developers.google.com/apps-script/reference/content/content-service)
 
